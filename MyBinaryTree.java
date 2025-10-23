@@ -65,6 +65,16 @@ public class MyBinaryTree<E extends Comparable<E>> {
     for (E element : elements) {
       insert(element);
     }
+
+    public boolean Search(Node <E> node, Integer target) {
+        if (node == null) {
+            return false;
+        }    
+        if (node.data.compareTo(target) == 0){
+            return true;
+        } 
+        return Search(node.left, target) || Search(node.right, target);     
+    }
   }
 
   public void breadthFirstSearch() {
