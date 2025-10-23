@@ -65,18 +65,31 @@ public class MyBinaryTree<E extends Comparable<E>> {
     for (E element : elements) {
       insert(element);
     }
-
-    public boolean Search(Node <E> node, Integer target) {
-        if (node == null) {
-            return false;
-        }    
-        if (node.data.compareTo(target) == 0){
-            return true;
-        } 
-        return Search(node.left, target) || Search(node.right, target);     
-    }
   }
 
+  /**
+   * Searches the tree recursively
+   *
+   * @param target the element to search for
+   * @return whether the target is in the tree
+   */
+  public boolean search(E target) {
+    return this.search(root, target);
+  }
+
+  private boolean search(Node<E> node, E target) {
+    if (node == null) {
+      return false;
+    }
+    if (node.data.compareTo(target) == 0) {
+      return true;
+    }
+    return search(node.left, target) || search(node.right, target);
+  }
+
+  /**
+   * Performs a breadth first search printing all elements by level
+   */
   public void breadthFirstSearch() {
     if (root == null)
       return;

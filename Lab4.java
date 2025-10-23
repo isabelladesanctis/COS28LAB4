@@ -24,7 +24,10 @@ public class Lab4 {
 
     // Add the data to the tree.
     tree.buildTree(data);
+
     tree.breadthFirstSearch();
+    System.out.println("Data contains 5: " + tree.search(5));
+    System.out.println("Data conatins: 2: " + tree.search(2));
   }
 
   /**
