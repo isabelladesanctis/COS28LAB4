@@ -1,4 +1,6 @@
 # COS285LAB4
 
 Sophia Priola,
-Caelin
+Caelin,
+Isabella,
+Josie
