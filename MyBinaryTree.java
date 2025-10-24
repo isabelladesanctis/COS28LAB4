@@ -24,7 +24,13 @@ public class MyBinaryTree<E extends Comparable<E>> {
             this.data = data;
         }
     }
-    
+    public static void main(String[] args){
+        List<Integer> data = loadNumbersFromFile(args[0]);
+        MyBinaryTree<Integer> tree = new MyBinaryTree<>();
+        tree.buildTree(data);
+        tree.breadthFirstSearch();
+        System.out.println("Data has 18: "+ tree.search(18);
+        System.out.println("Data has 17: "+ tree.search(17);
     /**Recursively searches for the next available insertion spot
      * and inserts a new node with the given value to that space
      * in the tree.
