@@ -24,13 +24,8 @@ public class MyBinaryTree<E extends Comparable<E>> {
             this.data = data;
         }
     }
-    public static void main(String[] args){
-        List<Integer> data = loadNumbersFromFile(args[0]);
-        MyBinaryTree<Integer> tree = new MyBinaryTree<>();
-        tree.buildTree(data);
-        tree.breadthFirstSearch();
-        System.out.println("Data has 18: "+ tree.search(18);
-        System.out.println("Data has 17: "+ tree.search(17);
+    
+     
     /**Recursively searches for the next available insertion spot
      * and inserts a new node with the given value to that space
      * in the tree.
@@ -63,5 +58,29 @@ public class MyBinaryTree<E extends Comparable<E>> {
         for (E element : elements) {
             insert(element);
         }
+        public boolean Search(Node <E> node, Integer target) {
+        if (node == null) {
+            return false;
+        }    
+        if (node.data.compareTo(target) == 0){
+            return true;
+        } 
+        return Search(node.left, target) || Search(node.right, target);     
+    }
+  }
+
+  public void breadthFirstSearch() {
+    if (root == null)
+      return;
+    ArrayDeque<Node<E>>q = new ArrayDeque<>():
+    q.add(root);
+    while(!q.isEmpty()){
+        Node<E> hold = q.remove();
+        System.out.println(hold.data);
+        if (hold.left!= null){
+            q.add(hold.left);
+        }
+        if (hold.right!= null){
+            q.add(hold.right)
     }
 }
